@@ -37,8 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'course',
-    'django_jinja'
+    'django_jinja',
+    'cmuaudit',
+    'course'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,4 +93,32 @@ TEMPLATE_LOADERS = (
     'django_jinja.loaders.AppLoader',
 )
 
-# DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja'
+DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        # 'file': {
+        #     'level': 'DEBUG',
+        #     'class': 'logging.FileHandler',
+        #     'filename': '/path/to/django/debug.log',
+        # },
+        'default': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'django.request': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
