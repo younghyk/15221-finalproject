@@ -65,20 +65,16 @@ class Course(models.Model):
         blank=False
     )
     fallsemester = models.BooleanField(
-        null=False,
-        blank=False
+        default=False
     )
     springsemester = models.BooleanField(
-        null=False,
-        blank=False
+        default=False
     )
     summersemester = models.BooleanField(
-        null=False,
-        blank=False
+        default=False
     )
     availablenextsemester = models.BooleanField(
-        null=False,
-        blank=True
+        default=False
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
