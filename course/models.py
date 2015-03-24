@@ -45,6 +45,41 @@ class Course(models.Model):
         null=False,
         blank=False
     )
+    description = models.CharField(
+        max_length=1000,
+        null=False,
+        blank=False
+    )
+    units = models.SmallIntegerField(
+        null=False,
+        blank=False
+    )
+    corequirements = models.CharField(
+        max_length=200,
+        null=False,
+        blank=False
+    )
+    prerequirements = models.CharField(
+        max_length=200,
+        null=False,
+        blank=False
+    )
+    fallsemester = models.BooleanField(
+        null=False,
+        blank=False
+    )
+    springsemester = models.BooleanField(
+        null=False,
+        blank=False
+    )
+    summersemester = models.BooleanField(
+        null=False,
+        blank=False
+    )
+    availablenextsemester = models.BooleanField(
+        null=False,
+        blank=True
+    )
     created_at = models.DateTimeField(
         auto_now_add=True,
         null=False,
